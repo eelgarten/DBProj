@@ -61,7 +61,10 @@ CREATE TABLE footballOffensiveLineStats
 	playerId varchar(20) PRIMARY KEY,
 	approximateValue int(2),
     sacksAllowed int(2),
+    qbHits int(2),
+    qbHurries int(2),
     penaltiesCommitted int(2),
+    penaltiesAccepted int(2),
 	CONSTRAINT offensive_lineman_id
 		FOREIGN KEY (playerId)
         REFERENCES generalPlayerInfo(playerId)
@@ -70,11 +73,7 @@ CREATE TABLE footballOffensiveLineStats
 DROP TABLE IF EXISTS basketballPlayerInfoAndStats;
 CREATE TABLE basketballPlayerInfoAndStats
 (
-	rank int(3) NOT NULL,
-    player char(40) NOT NULL,
     playerId varchar(20) PRIMARY KEY,
-	pos char(2) NOT NULL,
-    team char(3),
     gamesPlayed int(2),
     playerEfficiencyRating DECIMAL(3,1),
     pointsPerGame DECIMAL(3,1),
@@ -110,11 +109,11 @@ CREATE TABLE baseballHitterStats
     onBasePercentage DECIMAL(4,3),
     sluggingPercentage DECIMAL(4,3),
     onBasePlusSlugging DECIMAL(4,3),
+    winsAboveReplacement DECIMAL(3,1),
 	CONSTRAINT hitter_id
 		FOREIGN KEY (playerId)
         REFERENCES generalPlayerInfo(playerId)
 );
-
 
 DROP TABLE IF EXISTS baseballPitcherStats;
 CREATE TABLE baseballPitcherStats
@@ -134,6 +133,7 @@ CREATE TABLE baseballPitcherStats
     blownSaves int(2),
     walksPlusHitsAllowedPerInningsPitched DECIMAL(3,2),
     earnedRunAverage DECIMAL(3,2),
+    winsAboveReplacement DECIMAL(3,1),
 	CONSTRAINT pitcher_id
 		FOREIGN KEY (playerId)
         REFERENCES generalPlayerInfo(playerId)
