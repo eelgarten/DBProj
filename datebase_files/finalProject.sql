@@ -2,13 +2,13 @@ DROP DATABASE if exists finalProject;
 CREATE DATABASE finalProject;
 USE finalProject;
 
-DROP TABLE IF EXISTS generalPlayerInfo;
-CREATE TABLE generalPlayerInfo
+DROP TABLE IF EXISTS players;
+CREATE TABLE players
 (
 	playerName char(30) NOT NULL,
     playerId varchar(20) PRIMARY KEY,
-    sport char(3) NOT NULL,
     pos char(3) NOT NULL,
+    sport char(3) NOT NULL,
     team char(3) NOT NULL,
     salary int(10) NOT NULL
 );
@@ -34,7 +34,7 @@ CREATE TABLE footballOffensivePlayerStats
     interceptions int(2),
 	CONSTRAINT offensive_skillplayer_id
 		FOREIGN KEY (playerId)
-        REFERENCES generalPlayerInfo(playerId)
+        REFERENCES players(playerId)
 );
 
 DROP TABLE IF EXISTS footballDefensivePlayerStats;
@@ -52,7 +52,7 @@ CREATE TABLE footballDefensivePlayerStats
     defensiveTD int(1),
 	CONSTRAINT defensive_player_id
 		FOREIGN KEY (playerId)
-        REFERENCES generalPlayerInfo(playerId)
+        REFERENCES players(playerId)
 );
 
 DROP TABLE IF EXISTS footballOffensiveLineStats;
@@ -67,11 +67,11 @@ CREATE TABLE footballOffensiveLineStats
     penaltiesAccepted int(2),
 	CONSTRAINT offensive_lineman_id
 		FOREIGN KEY (playerId)
-        REFERENCES generalPlayerInfo(playerId)
+        REFERENCES players(playerId)
 );
 
-DROP TABLE IF EXISTS basketballPlayerInfoAndStats;
-CREATE TABLE basketballPlayerInfoAndStats
+DROP TABLE IF EXISTS basketballPlayerStats;
+CREATE TABLE basketballPlayerStats
 (
     playerId varchar(20) PRIMARY KEY,
     gamesPlayed int(2),
@@ -87,7 +87,7 @@ CREATE TABLE basketballPlayerInfoAndStats
     valueOverReplacementPlayer DECIMAL(2,1),
 	CONSTRAINT basketball_player_id
 		FOREIGN KEY (playerId)
-        REFERENCES generalPlayerInfo(playerId)
+        REFERENCES players(playerId)
 );
 
 DROP TABLE IF EXISTS baseballHitterStats;
@@ -112,7 +112,7 @@ CREATE TABLE baseballHitterStats
     winsAboveReplacement DECIMAL(3,1),
 	CONSTRAINT hitter_id
 		FOREIGN KEY (playerId)
-        REFERENCES generalPlayerInfo(playerId)
+        REFERENCES players(playerId)
 );
 
 DROP TABLE IF EXISTS baseballPitcherStats;
@@ -136,5 +136,5 @@ CREATE TABLE baseballPitcherStats
     winsAboveReplacement DECIMAL(3,1),
 	CONSTRAINT pitcher_id
 		FOREIGN KEY (playerId)
-        REFERENCES generalPlayerInfo(playerId)
+        REFERENCES players(playerId)
 );
