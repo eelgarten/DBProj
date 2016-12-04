@@ -1,4 +1,6 @@
--- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
+CREATE DATABASE  IF NOT EXISTS `finalproject` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `finalproject`;
+-- MySQL dump 10.13  Distrib 5.7.16, for Win64 (x86_64)
 --
 -- Host: localhost    Database: finalproject
 -- ------------------------------------------------------
@@ -39,9 +41,9 @@ CREATE TABLE `baseballhitterstats` (
   `onBasePercentage` decimal(4,3) DEFAULT NULL,
   `sluggingPercentage` decimal(4,3) DEFAULT NULL,
   `onBasePlusSlugging` decimal(4,3) DEFAULT NULL,
-  `winsAboveReplacement` decimal(3,1) DEFAULT NULL,
+  `winsAboveReplacement` decimal(4,2) DEFAULT NULL,
   PRIMARY KEY (`playerId`),
-  CONSTRAINT `hitter_id` FOREIGN KEY (`playerId`) REFERENCES `players` (`playerId`)
+  CONSTRAINT `hitter_id` FOREIGN KEY (`playerId`) REFERENCES `players` (`playerId`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -51,7 +53,7 @@ CREATE TABLE `baseballhitterstats` (
 
 LOCK TABLES `baseballhitterstats` WRITE;
 /*!40000 ALTER TABLE `baseballhitterstats` DISABLE KEYS */;
-INSERT INTO `baseballhitterstats` VALUES ('ABelt00',583,89,175,31,1,32,104,1,1,48,66,0.300,0.358,0.521,0.879,6.5),('AEato00',619,91,176,29,9,14,59,14,5,63,115,0.284,0.362,0.428,0.790,6.2),('ARizz00',583,94,170,43,4,32,109,3,5,74,108,0.292,0.385,0.544,0.928,5.7),('BDozi00',615,104,165,35,5,42,99,18,2,61,138,0.268,0.340,0.546,0.886,6.5),('BPose00',539,82,155,33,2,14,80,6,1,64,68,0.288,0.362,0.434,0.796,4.7),('CCorr00',577,76,158,36,3,20,96,13,3,75,139,0.274,0.361,0.451,0.811,6.0),('CSeag00',627,105,193,40,5,26,72,3,3,54,133,0.308,0.365,0.512,0.877,6.1),('CYeli00',578,78,172,38,3,21,98,9,4,72,138,0.298,0.376,0.483,0.859,5.3),('DLeMa00',552,104,192,32,8,11,66,11,7,66,80,0.348,0.416,0.495,0.911,5.2),('DOrti00',537,79,169,48,1,38,127,2,0,80,86,0.315,0.401,0.620,1.021,5.1),('DPedr00',633,105,201,36,1,15,74,7,4,61,73,0.318,0.376,0.449,0.825,5.6),('FFree00',589,102,178,43,6,34,91,6,1,89,171,0.302,0.400,0.569,0.968,6.5),('FLind00',604,99,182,30,3,15,78,19,5,57,88,0.301,0.358,0.435,0.794,5.7),('GSpri00',644,116,168,29,5,29,82,9,10,88,178,0.261,0.359,0.457,0.815,5.0),('IKins00',618,117,178,29,4,28,83,14,6,45,115,0.288,0.348,0.484,0.831,6.1),('JAltu00',640,108,216,42,5,24,96,30,10,60,70,0.338,0.396,0.531,0.928,7.7),('JBrad00',558,94,149,30,7,26,87,9,2,63,143,0.267,0.349,0.486,0.835,5.3),('JDona00',577,122,164,32,5,37,99,7,1,109,119,0.284,0.404,0.549,0.953,7.4),('JSegu00',637,102,203,41,7,20,64,33,10,39,101,0.319,0.368,0.499,0.867,5.7),('JTurn00',556,79,153,34,3,27,90,4,1,48,107,0.275,0.339,0.493,0.832,5.0),('KBrya00',603,121,176,35,3,39,102,8,5,75,154,0.292,0.385,0.554,0.939,7.7),('KSeag00',597,89,166,36,3,30,99,3,1,69,108,0.278,0.359,0.499,0.859,6.9),('MBett00',672,122,214,42,5,31,113,26,4,49,80,0.318,0.363,0.534,0.897,9.6),('MCabr00',595,92,188,31,1,38,108,0,0,75,116,0.316,0.393,0.563,0.956,4.9),('MMach00',640,105,188,40,1,37,96,0,3,48,120,0.294,0.343,0.533,0.876,6.7),('MTrou00',549,123,173,32,5,29,100,30,7,116,137,0.315,0.441,0.550,0.991,10.6),('NAren00',618,116,182,35,6,41,133,2,3,68,103,0.294,0.362,0.570,0.932,6.5),('NCruz00',589,96,169,27,1,43,105,2,0,62,159,0.287,0.360,0.555,0.915,4.7),('PGold00',579,106,172,33,3,24,95,32,5,110,150,0.297,0.411,0.489,0.899,4.8),('RCano00',655,107,195,33,2,39,103,0,1,47,100,0.298,0.350,0.533,0.882,7.3),('SMart00',489,71,152,34,5,9,46,47,12,23,104,0.311,0.362,0.456,0.818,4.9);
+INSERT INTO `baseballhitterstats` VALUES ('ABelt00',583,89,175,31,1,32,104,1,1,48,66,0.300,0.358,0.521,0.879,6.45),('AEato00',619,91,176,29,9,14,59,14,5,63,115,0.284,0.362,0.428,0.790,6.23),('ARizz00',583,94,170,43,4,32,109,3,5,74,108,0.292,0.385,0.544,0.928,5.74),('BDozi00',615,104,165,35,5,42,99,18,2,61,138,0.268,0.340,0.546,0.886,6.53),('BPose00',539,82,155,33,2,14,80,6,1,64,68,0.288,0.362,0.434,0.796,4.67),('CCorr00',577,76,158,36,3,20,96,13,3,75,139,0.274,0.361,0.451,0.811,5.95),('CSeag00',627,105,193,40,5,26,72,3,3,54,133,0.308,0.365,0.512,0.877,6.12),('CYeli00',578,78,172,38,3,21,98,9,4,72,138,0.298,0.376,0.483,0.859,5.27),('DLeMa00',552,104,192,32,8,11,66,11,7,66,80,0.348,0.416,0.495,0.911,5.19),('DOrti00',537,79,169,48,1,38,127,2,0,80,86,0.315,0.401,0.620,1.021,5.08),('DPedr00',633,105,201,36,1,15,74,7,4,61,73,0.318,0.376,0.449,0.825,5.63),('FFree00',589,102,178,43,6,34,91,6,1,89,171,0.302,0.400,0.569,0.968,6.46),('FLind00',604,99,182,30,3,15,78,19,5,57,88,0.301,0.358,0.435,0.794,5.72),('GSpri00',644,116,168,29,5,29,82,9,10,88,178,0.261,0.359,0.457,0.815,5.01),('IKins00',618,117,178,29,4,28,83,14,6,45,115,0.288,0.348,0.484,0.831,6.13),('JAltu00',640,108,216,42,5,24,96,30,10,60,70,0.338,0.396,0.531,0.928,7.65),('JBrad00',558,94,149,30,7,26,87,9,2,63,143,0.267,0.349,0.486,0.835,5.33),('JDona00',577,122,164,32,5,37,99,7,1,109,119,0.284,0.404,0.549,0.953,7.44),('JSegu00',637,102,203,41,7,20,64,33,10,39,101,0.319,0.368,0.499,0.867,5.65),('JTurn00',556,79,153,34,3,27,90,4,1,48,107,0.275,0.339,0.493,0.832,4.95),('KBrya00',603,121,176,35,3,39,102,8,5,75,154,0.292,0.385,0.554,0.939,7.67),('KSeag00',597,89,166,36,3,30,99,3,1,69,108,0.278,0.359,0.499,0.859,6.87),('MBett00',672,122,214,42,5,31,113,26,4,49,80,0.318,0.363,0.534,0.897,9.55),('MCabr00',595,92,188,31,1,38,108,0,0,75,116,0.316,0.393,0.563,0.956,4.90),('MMach00',640,105,188,40,1,37,96,0,3,48,120,0.294,0.343,0.533,0.876,6.66),('MTrou00',549,123,173,32,5,29,100,30,7,116,137,0.315,0.441,0.550,0.991,10.55),('NAren00',618,116,182,35,6,41,133,2,3,68,103,0.294,0.362,0.570,0.932,6.50),('NCruz00',589,96,169,27,1,43,105,2,0,62,159,0.287,0.360,0.555,0.915,4.66),('PGold00',579,106,172,33,3,24,95,32,5,110,150,0.297,0.411,0.489,0.899,4.84),('RCano00',655,107,195,33,2,39,103,0,1,47,100,0.298,0.350,0.533,0.882,7.31),('SMart00',489,71,152,34,5,9,46,47,12,23,104,0.311,0.362,0.456,0.818,4.92);
 /*!40000 ALTER TABLE `baseballhitterstats` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -78,9 +80,9 @@ CREATE TABLE `baseballpitcherstats` (
   `blownSaves` int(2) DEFAULT NULL,
   `walksPlusHitsAllowedPerInningsPitched` decimal(3,2) DEFAULT NULL,
   `earnedRunAverage` decimal(3,2) DEFAULT NULL,
-  `winsAboveReplacement` decimal(3,1) DEFAULT NULL,
+  `winsAboveReplacement` decimal(4,2) DEFAULT NULL,
   PRIMARY KEY (`playerId`),
-  CONSTRAINT `pitcher_id` FOREIGN KEY (`playerId`) REFERENCES `players` (`playerId`)
+  CONSTRAINT `pitcher_id` FOREIGN KEY (`playerId`) REFERENCES `players` (`playerId`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -90,7 +92,7 @@ CREATE TABLE `baseballpitcherstats` (
 
 LOCK TABLES `baseballpitcherstats` WRITE;
 /*!40000 ALTER TABLE `baseballpitcherstats` DISABLE KEYS */;
-INSERT INTO `baseballpitcherstats` VALUES ('ASanc00',30,30,192.0,161,69,64,63,161,15,2,0,0,1.17,3.00,4.8),('CHame00',32,32,200.2,185,83,74,77,200,15,5,0,0,1.31,3.32,5.0),('CKers00',21,21,149.0,97,31,28,11,172,12,4,0,0,0.72,1.69,5.6),('CKlub00',32,32,215.0,170,82,75,57,227,18,9,0,0,1.06,3.14,6.5),('CMart00',31,31,195.1,169,68,66,70,174,16,9,0,0,1.22,3.04,5.4),('JCuet00',32,32,219.2,195,71,68,45,198,18,5,0,0,1.09,2.79,5.6),('JLest00',32,32,202.2,154,57,55,52,197,19,5,0,0,1.02,2.44,5.3),('JQuin00',32,32,208.0,192,76,74,50,181,13,12,0,0,1.16,3.20,5.2),('JTehe00',30,30,188.0,157,70,67,41,167,7,10,0,0,1.05,3.21,4.8),('JVerl00',34,34,227.2,171,81,77,57,254,16,9,0,0,1.00,3.04,6.6),('KHend00',31,30,190.0,142,53,45,44,170,16,8,0,0,0.98,2.13,5.0),('MBumg00',34,34,226.2,178,79,69,54,251,15,9,0,0,1.02,2.74,5.0),('MFulm00',26,26,159.0,136,57,54,42,132,11,7,0,0,1.12,3.06,4.9),('MSche00',34,34,228.1,165,77,75,56,284,20,7,0,0,0.97,2.96,6.2),('MTana00',31,31,199.2,179,75,68,36,165,14,4,0,0,1.08,3.07,5.4),('NSynd00',31,30,183.2,168,61,53,43,218,14,9,0,0,1.15,2.60,5.3),('RPorc00',33,33,223.0,193,85,78,32,189,22,4,0,0,1.01,3.15,5.0),('TRoar00',34,33,210.0,173,72,66,73,172,16,10,0,0,1.17,2.83,5.5);
+INSERT INTO `baseballpitcherstats` VALUES ('ASanc00',30,30,192.0,161,69,64,63,161,15,2,0,0,1.17,3.00,4.75),('CHame00',32,32,200.2,185,83,74,77,200,15,5,0,0,1.31,3.32,4.98),('CKers00',21,21,149.0,97,31,28,11,172,12,4,0,0,0.72,1.69,5.56),('CKlub00',32,32,215.0,170,82,75,57,227,18,9,0,0,1.06,3.14,6.45),('CMart00',31,31,195.1,169,68,66,70,174,16,9,0,0,1.22,3.04,5.40),('CSale00',32,32,226.2,190,88,84,45,233,17,10,0,0,1.04,3.34,4.92),('JCuet00',32,32,219.2,195,71,68,45,198,18,5,0,0,1.09,2.79,5.56),('JLest00',32,32,202.2,154,57,55,52,197,19,5,0,0,1.02,2.44,5.31),('JQuin00',32,32,208.0,192,76,74,50,181,13,12,0,0,1.16,3.20,5.15),('JTehe00',30,30,188.0,157,70,67,41,167,7,10,0,0,1.05,3.21,4.77),('JVerl00',34,34,227.2,171,81,77,57,254,16,9,0,0,1.00,3.04,6.61),('KHend00',31,30,190.0,142,53,45,44,170,16,8,0,0,0.98,2.13,4.99),('MBumg00',34,34,226.2,178,79,69,54,251,15,9,0,0,1.02,2.74,5.01),('MFulm00',26,26,159.0,136,57,54,42,132,11,7,0,0,1.12,3.06,4.87),('MSche00',34,34,228.1,165,77,75,56,284,20,7,0,0,0.97,2.96,6.21),('MTana00',31,31,199.2,179,75,68,36,165,14,4,0,0,1.08,3.07,5.42),('NSynd00',31,30,183.2,168,61,53,43,218,14,9,0,0,1.15,2.60,5.26),('RPorc00',33,33,223.0,193,85,78,32,189,22,4,0,0,1.01,3.15,5.04),('TRoar00',34,33,210.0,173,72,66,73,172,16,10,0,0,1.17,2.83,5.51);
 /*!40000 ALTER TABLE `baseballpitcherstats` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -115,7 +117,7 @@ CREATE TABLE `basketballplayerstats` (
   `usagePercentage` decimal(3,1) DEFAULT NULL,
   `valueOverReplacementPlayer` decimal(2,1) DEFAULT NULL,
   PRIMARY KEY (`playerId`),
-  CONSTRAINT `basketball_player_id` FOREIGN KEY (`playerId`) REFERENCES `players` (`playerId`)
+  CONSTRAINT `basketball_player_id` FOREIGN KEY (`playerId`) REFERENCES `players` (`playerId`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -142,13 +144,13 @@ CREATE TABLE `footballdefensiveplayerstats` (
   `totalTackles` int(3) DEFAULT NULL,
   `assistedTackles` int(3) DEFAULT NULL,
   `sacks` int(2) DEFAULT NULL,
-  `passedDefended` int(2) DEFAULT NULL,
+  `passesDefended` int(2) DEFAULT NULL,
   `interceptions` int(2) DEFAULT NULL,
   `forcedFumbles` int(2) DEFAULT NULL,
   `fumblesRecovered` int(2) DEFAULT NULL,
   `defensiveTD` int(1) DEFAULT NULL,
   PRIMARY KEY (`playerId`),
-  CONSTRAINT `defensive_player_id` FOREIGN KEY (`playerId`) REFERENCES `players` (`playerId`)
+  CONSTRAINT `defensive_player_id` FOREIGN KEY (`playerId`) REFERENCES `players` (`playerId`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -178,7 +180,7 @@ CREATE TABLE `footballoffensivelinestats` (
   `penaltiesCommitted` int(2) DEFAULT NULL,
   `penaltiesAccepted` int(2) DEFAULT NULL,
   PRIMARY KEY (`playerId`),
-  CONSTRAINT `offensive_lineman_id` FOREIGN KEY (`playerId`) REFERENCES `players` (`playerId`)
+  CONSTRAINT `offensive_lineman_id` FOREIGN KEY (`playerId`) REFERENCES `players` (`playerId`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -217,7 +219,7 @@ CREATE TABLE `footballoffensiveplayerstats` (
   `fumbles` int(2) DEFAULT NULL,
   `interceptions` int(2) DEFAULT NULL,
   PRIMARY KEY (`playerId`),
-  CONSTRAINT `offensive_skillplayer_id` FOREIGN KEY (`playerId`) REFERENCES `players` (`playerId`)
+  CONSTRAINT `offensive_skillplayer_id` FOREIGN KEY (`playerId`) REFERENCES `players` (`playerId`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -255,9 +257,423 @@ CREATE TABLE `players` (
 
 LOCK TABLES `players` WRITE;
 /*!40000 ALTER TABLE `players` DISABLE KEYS */;
-INSERT INTO `players` VALUES ('Adrian Beltre','ABelt00','3B','MLB','TEX',18000000),('Adam Eaton','AEato00','OF','MLB','CHW',2750000),('Branden Albert','AlbeBr20','T','NFL','MIA',10725000),('LaMarcus Aldridge','aldrila01','PF','NBA','SAS',19689000),('Ezekiel Ansah','AnsaEz00','DE','NFL','DET',5071228),('Giannis Antetokounmpo','antetgi01','SF','NBA','MIL',1953960),('Carmelo Anthony','anthoca01','SF','NBA','NYK',22875000),('Trevor Ariza','arizatr01','SF','NBA','HOU',8193030),('Anthony Rizzo','ARizz00','1B','MLB','CHC',5285714),('Terron Armstead','ArmsTe00','T','NFL','NOR',769359),('Aaron Sanchez','ASanc00','SP','MLB','TOR',517800),('Geno Atkins','AtkiGe99','DT','NFL','CIN',9000000),('Cliff Avril','AvriCl99','DE','NFL','SEA',8000000),('Doug Baldwin','BaldDo00','WR','NFL','SEA',4650000),('Joe Barksdale','BarkJo00','T','NFL','SDG',2095000),('Anthony Barr','BarrAn00','OLB','NFL','MIN',2896272),('Nicolas Batum','batumni01','SG','NBA','CHO',13125306),('Brian Dozier','BDozi00','2B','MLB','MIN',3000000),('Odell Beckham','BeckOd00','WR','NFL','NYG',2365045),('Michael Bennett','BennMi99','DE','NFL','SEA',8000000),('Giovani Bernard','BernGi00','RB','NFL','CIN',1432729),('Eric Berry','BerrEr99','S','NFL','KAN',8357700),('Andrew Bogut','bogutan01','C','NBA','GSW',13800000),('Blake Bortles','BortBl00','QB','NFL','JAX',4694273),('NaVorro Bowman','BowmNa99','MLB','NFL','SFO',8404000),('Buster Posey','BPose00','C','MLB','SF',20777778),('Sam Bradford','BradSa00','QB','NFL','PHI',12985000),('Tom Brady','BradTo00','QB','NFL','NWE',14000000),('Drew Brees','BreeDr00','QB','NFL','NOR',23800000),('Teddy Bridgewater','BridTe00','QB','NFL','MIN',1556705),('Justin Britt','BritJu00','C','NFL','SEA',785666),('Antonio Brown','BrowAn04','WR','NFL','PIT',7120833),('John Brown','BrowJo02','WR','NFL','ARI',657725),('Jimmy Butler','butleji01','SG','NBA','CHI',16407500),('Malcolm Butler','ButlMa01','DB','NFL','NWE',510000),('Kentavious Caldwell-Pope','caldwke01','SG','NBA','DET',2891760),('Calais Campbell','CampCa99','DE','NFL','ARI',14750000),('Derek Carr','CarrDe02','QB','NFL','OAK',1220864),('Carlos Correa','CCorr00','SS','MLB','HOU',516700),('Cole Hamels','CHame00','SP','MLB','TEX',22500000),('Clayton Kershaw','CKers00','SP','MLB','LAD',33000000),('Corey Kluber','CKlub00','SP','MLB','CLE',4700000),('Carlos Martinez','CMart00','SP','MLB','STL',539000),('Jamie Collins','CollJa00','OLB','NFL','NWE',1025728),('DeMarcus Cousins','couside01','C','NBA','SAC',15851950),('Kirk Cousins','CousKi00','QB','NFL','WAS',778172),('Fletcher Cox','CoxxFl00','DT','NFL','PHI',3258563),('Jae Crowder','crowdja01','SF','NBA','BOS',6796117),('Chris Sale','CSal00','SP','MLB','CHW',9150000),('Corey Seager','CSeag00','SS','MLB','LAD',510000),('Stephen Curry','curryst01','PG','NBA','GSW',11370786),('Jay Cutler','CutlJa00','QB','NFL','CHI',16500000),('Christian Yelich','CYeli00','OF','MLB','MIA',1000000),('Andy Dalton','DaltAn00','QB','NFL','CIN',9600000),('Anthony Davis','davisan02','PF','NBA','NOP',7070730),('Ed Davis','davised01','PF','NBA','POR',6980802),('Thomas Davis','DaviTh20','OLB','NFL','CAR',7650000),('David DeCastro','DeCaDa00','G','NFL','PIT',2486240),('Luol Deng','denglu01','SF','NBA','MIA',10151612),('DeMar DeRozan','derozde01','SG','NBA','TOR',10050000),('Gorgui Dieng','dienggo01','C','NBA','MIN',1474440),('DJ LeMahieu','DLeMa00','2B','MLB','COL',3000000),('Aaron Donald','DonaAa00','DT','NFL','STL',2303750),('David Ortiz','DOrti00','DH','MLB','BOS',16000000),('Dustin Pedroia','DPedr00','2B','MLB','BOS',12642511),('Elvis Dumervil','DumeEl20','OLB','NFL','BAL',7375000),('Tim Duncan','duncati01','C','NBA','SAS',5250000),('Carlos Dunlap','DunlCa99','DE','NFL','CIN',4900000),('Kevin Durant','duranke01','SF','NBA','OKC',20158622),('Mike Evans','EvanMi00','WR','NFL','TAM',3325341),('Derrick Favors','favorde01','PF','NBA','UTA',12000000),('Freddie Freeman','FFree00','1B','MLB','ATL',12359375),('Larry Fitzgerald','FitzLa00','WR','NFL','ARI',10850000),('Ryan Fitzpatrick','FitzRy00','QB','NFL','NYJ',3250000),('Francisco Lindor','FLind00','SS','MLB','CLE',540300),('Devonta Freeman','FreeDe00','RB','NFL','ATL',631106),('Pau Gasol','gasolpa01','PF','NBA','CHI',7448760),('Paul George','georgpa01','SF','NBA','IND',17120106),('Garry Gilliam','GillGa01','G','NFL','SEA',514000),('Rudy Gobert','goberru01','C','NBA','UTA',1175880),('A.J. Green','GreeA.00','WR','NFL','CIN',14750000),('Danny Green','greenda02','SG','NBA','SAS',10000000),('Draymond Green','greendr01','PF','NBA','GSW',14260870),('Everson Griffen','GrifEv99','DE','NFL','MIN',8200000),('Rob Gronkowski','GronRo00','TE','NFL','NWE',8650000),('George Springer','GSpri00','OF','MLB','HOU',522400),('James Harden','hardeja01','SG','NBA','HOU',15756438),('Chris Harris','HarrCh01','DB','NFL','DEN',3000000),('Gordon Hayward','haywago01','SF','NBA','UTA',15409570),('George Hill','hillge01','PG','NBA','IND',8000000),('DeAndre Hopkins','HopkDe00','WR','NFL','HOU',2080009),('Al Horford','horfoal01','C','NBA','ATL',12000000),('Ian Kinsler','IKins00','2B','MLB','DET',14000000),('Mike Iupati','IupaMi20','G','NFL','ARI',6700000),('Reggie Jackson','jacksre01','PG','NBA','DET',13913044),('Jose Altuve','JAltu00','2B','MLB','HOU',3687500),('LeBron James','jamesle01','SF','NBA','CLE',22970000),('Jackie Bradley Jr.','JBrad00','OF','MLB','BOS',546500),('Johnny Cueto','JCuet00','SP','MLB','SF',17500000),('Josh Donaldson','JDona00','3B','MLB','TOR',11650000),('Jon Lester','JLest00','SP','MLB','CHC',25000000),('Calvin Johnson','JohnCa00','WR','NFL','DET',20558000),('Derrick Johnson','JohnDe25','MLB','NFL','KAN',5250000),('Amir Johnson','johnsam01','PF','NBA','BOS',12000000),('Nikola Jokic','jokicni01','C','NBA','DEN',1300000),('Chandler Jones','JoneCh03','DE','NFL','NWE',2600659),('Julio Jones','JoneJu02','WR','NFL','ATL',12400000),('DeAndre Jordan','jordade01','C','NBA','LAC',19689000),('Jose Quintana','JQuin00','SP','MLB','CHW',5400000),('Jean Segura','JSegu00','2B','MLB','ARI',2600000),('Julio Teheran','JTehe00','SP','MLB','ATL',3466666),('Justin Turner','JTurn00','3B','MLB','LAD',5100000),('Justin Verlander','JVerl00','SP','MLB','DET',28000000),('Ryan Kalil','KaliRy20','C','NFL','CAR',11795000),('Kris Bryant','KBrya00','3B','MLB','CHC',652000),('Kyle Hendricks','KHend00','SP','MLB','CHC',541000),('Kyle Seager','KSeag00','3B','MLB','SEA',8000000),('Luke Kuechly','KuecLu00','MLB','NFL','CAR',6697018),('Sean Lee','LeexSe99','OLB','NFL','DAL',5450000),('Kawhi Leonard','leonaka01','SF','NBA','SAS',16407500),('Damian Lillard','lillada01','PG','NBA','POR',4236287),('Kyle Long','LongKy00','G','NFL','CHI',2263896),('Kevin Love','loveke01','PF','NBA','CLE',19689000),('Kyle Lowry','lowryky01','PG','NBA','TOR',12000000),('Khalil Mack','MackKh00','OLB','NFL','OAK',4244773),('Jeremy Maclin','MaclJe00','WR','NFL','KAN',3400000),('Eli Manning','MannEl00','QB','NFL','NYG',14450000),('Brandon Marshall','MarsBr00','WR','NFL','NYJ',9000000),('Doug Martin','MartDo00','RB','NFL','TAM',2159668),('Tyrann Mathieu','MathTy00','DB','NFL','ARI',855937),('Clay Matthews','MattCl99','OLB','NFL','GNB',12700000),('Mookie Betts','MBett00','OF','MLB','BOS',566000),('Madison Bumgarner','MBumg00','SP','MLB','SF',9916667),('Miguel Cabrera','MCabr00','1B','MLB','DET',28000000),('Michael Fulmer','MFulm00','SP','MLB','DET',507500),('Paul Millsap','millspa01','PF','NBA','ATL',18671659),('Von Miller','MillVo00','OLB','NFL','DEN',9754000),('Manny Machado','MMach00','3B','MLB','BAL',5000000),('Max Scherzer','MSche00','SP','MLB','WSH',22142857),('Masahiro Tanaka','MTana00','SP','MLB','NYY',22000000),('Mike Trout','MTrou00','OF','MLB','LAA',16083333),('Nolan Arenado','NAren00','3B','MLB','COL',5000000),('Nelson Cruz','NCruz00','OF','MLB','SEA',14250000),('Reggie Nelson','NelsRe99','S','NFL','CIN',4775000),('Cam Newton','NewtCa00','QB','NFL','CAR',13000000),('Josh Norman','NormJo01','DB','NFL','CAR',1591750),('Noah Syndergaard','NSynd00','SP','MLB','NYM',535375),('Victor Oladipo','oladivi01','SG','NBA','ORL',5192520),('Greg Olsen','OlseGr00','TE','NFL','CAR',6300000),('Carson Palmer','PalmCa00','QB','NFL','ARI',7375000),('Chris Paul','paulch01','PG','NBA','LAC',21468695),('Julius Peppers','PeppJu99','OLB','NFL','GNB',12000000),('Adrian Peterson','PeteAd01','RB','NFL','MIN',15650000),('Marcus Peters','PeteMa00','DB','NFL','KAN',1742574),('Patrick Peterson','PetePa00','DB','NFL','ARI',14791491),('Paul Goldschmidt','PGold00','1B','MLB','ARI',5833333),('Mason Plumlee','plumlma01','C','NBA','POR',1415520),('Otto Porter','porteot01','SF','NBA','WAS',4662960),('Robinson Cano','RCano00','2B','MLB','SEA',24000000),('Darrelle Revis','ReviDa99','DB','NFL','NYJ',16000000),('Philip Rivers','RivePh00','QB','NFL','SDG',21166668),('Allen Robinson','RobiAl02','WR','NFL','JAX',797925),('Aaron Rodgers','RodgAa00','QB','NFL','GNB',18250000),('Ben Roethlisberger','RoetBe00','QB','NFL','PIT',17245000),('Rick Porcello','RPorc00','SP','MLB','BOS',20125000),('Ricky Rubio','rubiori01','PG','NBA','MIN',12700000),('Matt Ryan','RyanMa00','QB','NFL','ATL',19500000),('Richard Sherman','SherRi00','DB','NFL','SEA',12200000),('Kawann Short','ShorKa00','DT','NFL','CAR',1262819),('Josh Sitton','SittJo20','G','NFL','GNB',7000000),('Starling Marte','SMart00','OF','MLB','PIT',3333333),('Alex Smith','SmitAl03','QB','NFL','KAN',15600000),('Tyron Smith','SmitTy00','T','NFL','DAL',5039000),('Matthew Stafford','StafMa00','QB','NFL','DET',17721250),('Zach Strief','StriZa20','T','NFL','NOR',3200000),('Aqib Talib','TaliAq99','DB','NFL','DEN',6968750),('Ryan Tannehill','TannRy00','QB','NFL','MIA',4873364),('Tyrod Taylor','TaylTy00','QB','NFL','BUF',883333),('Isaiah Thomas','thomais02','PG','NBA','BOS',6912869),('Earl Thomas','ThomEa99','S','NFL','SEA',7400000),('Joe Thomas','ThomJo28','T','NFL','CLE',10200000),('Karl-Anthony Towns','townska01','PF','NBA','MIN',5703600),('Tanner Roark','TRoar00','SP','MLB','WSH',543000),('Trai Turner','TurnTr01','G','NFL','CAR',657950),('Jared Veldheer','VeldJa20','T','NFL','ARI',8500000),('Bobby Wagner','WagnBo00','MLB','NFL','SEA',2970663),('Kemba Walker','walkeke02','PG','NBA','CHO',12000000),('John Wall','walljo01','PG','NBA','WAS',15851950),('J.J. Watt','WattJ.00','DE','NFL','HOU',13969000),('Russell Westbrook','westbru01','PG','NBA','OKC',16744218),('Andrew Whitworth','WhitAn20','T','NFL','CIN',7200000),('Hassan Whiteside','whiteha01','C','NBA','MIA',981348),('Muhammad Wilkerson','WilkMu00','DE','NFL','NYJ',6969000),('Marvin Williams','willima02','PF','NBA','CHO',7000000),('Trent Williams','WillTr21','T','NFL','WAS',10664763),('Russell Wilson','WilsRu00','QB','NFL','SEA',7054868),('Jameis Winston','WinsJa00','QB','NFL','TAM',4609323),('Charles Woodson','WoodCh00','DB','NFL','OAK',4200000),('K.J. Wright','WrigK.00','OLB','NFL','SEA',4750000),('Marshal Yanda','YandMa20','G','NFL','BAL',6981765);
+INSERT INTO `players` VALUES ('Adrian Beltre','ABelt00','3B','MLB','TEX',18000000),('Adam Eaton','AEato00','OF','MLB','CHW',2750000),('Branden Albert','AlbeBr20','T','NFL','MIA',10725000),('LaMarcus Aldridge','aldrila01','PF','NBA','SAS',19689000),('Ezekiel Ansah','AnsaEz00','DE','NFL','DET',5071228),('Giannis Antetokounmpo','antetgi01','SF','NBA','MIL',1953960),('Carmelo Anthony','anthoca01','SF','NBA','NYK',22875000),('Trevor Ariza','arizatr01','SF','NBA','HOU',8193030),('Anthony Rizzo','ARizz00','1B','MLB','CHC',5285714),('Terron Armstead','ArmsTe00','T','NFL','NOR',769359),('Aaron Sanchez','ASanc00','SP','MLB','TOR',517800),('Geno Atkins','AtkiGe99','DT','NFL','CIN',9000000),('Cliff Avril','AvriCl99','DE','NFL','SEA',8000000),('Doug Baldwin','BaldDo00','WR','NFL','SEA',4650000),('Joe Barksdale','BarkJo00','T','NFL','SDG',2095000),('Anthony Barr','BarrAn00','OLB','NFL','MIN',2896272),('Nicolas Batum','batumni01','SG','NBA','CHO',13125306),('Brian Dozier','BDozi00','2B','MLB','MIN',3000000),('Odell Beckham','BeckOd00','WR','NFL','NYG',2365045),('Michael Bennett','BennMi99','DE','NFL','SEA',8000000),('Giovani Bernard','BernGi00','RB','NFL','CIN',1432729),('Eric Berry','BerrEr99','S','NFL','KAN',8357700),('Andrew Bogut','bogutan01','C','NBA','GSW',13800000),('Blake Bortles','BortBl00','QB','NFL','JAX',4694273),('NaVorro Bowman','BowmNa99','MLB','NFL','SFO',8404000),('Buster Posey','BPose00','C','MLB','SF',20777778),('Sam Bradford','BradSa00','QB','NFL','PHI',12985000),('Tom Brady','BradTo00','QB','NFL','NWE',14000000),('Drew Brees','BreeDr00','QB','NFL','NOR',23800000),('Teddy Bridgewater','BridTe00','QB','NFL','MIN',1556705),('Justin Britt','BritJu00','C','NFL','SEA',785666),('Antonio Brown','BrowAn04','WR','NFL','PIT',7120833),('John Brown','BrowJo02','WR','NFL','ARI',657725),('Jimmy Butler','butleji01','SG','NBA','CHI',16407500),('Malcolm Butler','ButlMa01','DB','NFL','NWE',510000),('Kentavious Caldwell-Pope','caldwke01','SG','NBA','DET',2891760),('Calais Campbell','CampCa99','DE','NFL','ARI',14750000),('Derek Carr','CarrDe02','QB','NFL','OAK',1220864),('Carlos Correa','CCorr00','SS','MLB','HOU',516700),('Cole Hamels','CHame00','SP','MLB','TEX',22500000),('Clayton Kershaw','CKers00','SP','MLB','LAD',33000000),('Corey Kluber','CKlub00','SP','MLB','CLE',4700000),('Carlos Martinez','CMart00','SP','MLB','STL',539000),('Jamie Collins','CollJa00','OLB','NFL','NWE',1025728),('DeMarcus Cousins','couside01','C','NBA','SAC',15851950),('Kirk Cousins','CousKi00','QB','NFL','WAS',778172),('Fletcher Cox','CoxxFl00','DT','NFL','PHI',3258563),('Jae Crowder','crowdja01','SF','NBA','BOS',6796117),('Chris Sale','CSale00','SP','MLB','CHW',9150000),('Corey Seager','CSeag00','SS','MLB','LAD',510000),('Stephen Curry','curryst01','PG','NBA','GSW',11370786),('Jay Cutler','CutlJa00','QB','NFL','CHI',16500000),('Christian Yelich','CYeli00','OF','MLB','MIA',1000000),('Andy Dalton','DaltAn00','QB','NFL','CIN',9600000),('Anthony Davis','davisan02','PF','NBA','NOP',7070730),('Ed Davis','davised01','PF','NBA','POR',6980802),('Thomas Davis','DaviTh20','OLB','NFL','CAR',7650000),('David DeCastro','DeCaDa00','G','NFL','PIT',2486240),('Luol Deng','denglu01','SF','NBA','MIA',10151612),('DeMar DeRozan','derozde01','SG','NBA','TOR',10050000),('Gorgui Dieng','dienggo01','C','NBA','MIN',1474440),('DJ LeMahieu','DLeMa00','2B','MLB','COL',3000000),('Aaron Donald','DonaAa00','DT','NFL','STL',2303750),('David Ortiz','DOrti00','DH','MLB','BOS',16000000),('Dustin Pedroia','DPedr00','2B','MLB','BOS',12642511),('Elvis Dumervil','DumeEl20','OLB','NFL','BAL',7375000),('Tim Duncan','duncati01','C','NBA','SAS',5250000),('Carlos Dunlap','DunlCa99','DE','NFL','CIN',4900000),('Kevin Durant','duranke01','SF','NBA','OKC',20158622),('Mike Evans','EvanMi00','WR','NFL','TAM',3325341),('Derrick Favors','favorde01','PF','NBA','UTA',12000000),('Freddie Freeman','FFree00','1B','MLB','ATL',12359375),('Larry Fitzgerald','FitzLa00','WR','NFL','ARI',10850000),('Ryan Fitzpatrick','FitzRy00','QB','NFL','NYJ',3250000),('Francisco Lindor','FLind00','SS','MLB','CLE',540300),('Devonta Freeman','FreeDe00','RB','NFL','ATL',631106),('Pau Gasol','gasolpa01','PF','NBA','CHI',7448760),('Paul George','georgpa01','SF','NBA','IND',17120106),('Garry Gilliam','GillGa01','G','NFL','SEA',514000),('Rudy Gobert','goberru01','C','NBA','UTA',1175880),('A.J. Green','GreeA.00','WR','NFL','CIN',14750000),('Danny Green','greenda02','SG','NBA','SAS',10000000),('Draymond Green','greendr01','PF','NBA','GSW',14260870),('Everson Griffen','GrifEv99','DE','NFL','MIN',8200000),('Rob Gronkowski','GronRo00','TE','NFL','NWE',8650000),('George Springer','GSpri00','OF','MLB','HOU',522400),('James Harden','hardeja01','SG','NBA','HOU',15756438),('Chris Harris','HarrCh01','DB','NFL','DEN',3000000),('Gordon Hayward','haywago01','SF','NBA','UTA',15409570),('George Hill','hillge01','PG','NBA','IND',8000000),('DeAndre Hopkins','HopkDe00','WR','NFL','HOU',2080009),('Al Horford','horfoal01','C','NBA','ATL',12000000),('Ian Kinsler','IKins00','2B','MLB','DET',14000000),('Mike Iupati','IupaMi20','G','NFL','ARI',6700000),('Reggie Jackson','jacksre01','PG','NBA','DET',13913044),('Jose Altuve','JAltu00','2B','MLB','HOU',3687500),('LeBron James','jamesle01','SF','NBA','CLE',22970000),('Jackie Bradley Jr.','JBrad00','OF','MLB','BOS',546500),('Johnny Cueto','JCuet00','SP','MLB','SF',17500000),('Josh Donaldson','JDona00','3B','MLB','TOR',11650000),('Jon Lester','JLest00','SP','MLB','CHC',25000000),('Calvin Johnson','JohnCa00','WR','NFL','DET',20558000),('Derrick Johnson','JohnDe25','MLB','NFL','KAN',5250000),('Amir Johnson','johnsam01','PF','NBA','BOS',12000000),('Nikola Jokic','jokicni01','C','NBA','DEN',1300000),('Chandler Jones','JoneCh03','DE','NFL','NWE',2600659),('Julio Jones','JoneJu02','WR','NFL','ATL',12400000),('DeAndre Jordan','jordade01','C','NBA','LAC',19689000),('Jose Quintana','JQuin00','SP','MLB','CHW',5400000),('Jean Segura','JSegu00','2B','MLB','ARI',2600000),('Julio Teheran','JTehe00','SP','MLB','ATL',3466666),('Justin Turner','JTurn00','3B','MLB','LAD',5100000),('Justin Verlander','JVerl00','SP','MLB','DET',28000000),('Ryan Kalil','KaliRy20','C','NFL','CAR',11795000),('Kris Bryant','KBrya00','3B','MLB','CHC',652000),('Kyle Hendricks','KHend00','SP','MLB','CHC',541000),('Kyle Seager','KSeag00','3B','MLB','SEA',8000000),('Luke Kuechly','KuecLu00','MLB','NFL','CAR',6697018),('Sean Lee','LeexSe99','OLB','NFL','DAL',5450000),('Kawhi Leonard','leonaka01','SF','NBA','SAS',16407500),('Damian Lillard','lillada01','PG','NBA','POR',4236287),('Kyle Long','LongKy00','G','NFL','CHI',2263896),('Kevin Love','loveke01','PF','NBA','CLE',19689000),('Kyle Lowry','lowryky01','PG','NBA','TOR',12000000),('Khalil Mack','MackKh00','OLB','NFL','OAK',4244773),('Jeremy Maclin','MaclJe00','WR','NFL','KAN',3400000),('Eli Manning','MannEl00','QB','NFL','NYG',14450000),('Brandon Marshall','MarsBr00','WR','NFL','NYJ',9000000),('Doug Martin','MartDo00','RB','NFL','TAM',2159668),('Tyrann Mathieu','MathTy00','DB','NFL','ARI',855937),('Clay Matthews','MattCl99','OLB','NFL','GNB',12700000),('Mookie Betts','MBett00','OF','MLB','BOS',566000),('Madison Bumgarner','MBumg00','SP','MLB','SF',9916667),('Miguel Cabrera','MCabr00','1B','MLB','DET',28000000),('Michael Fulmer','MFulm00','SP','MLB','DET',507500),('Paul Millsap','millspa01','PF','NBA','ATL',18671659),('Von Miller','MillVo00','OLB','NFL','DEN',9754000),('Manny Machado','MMach00','3B','MLB','BAL',5000000),('Max Scherzer','MSche00','SP','MLB','WSH',22142857),('Masahiro Tanaka','MTana00','SP','MLB','NYY',22000000),('Mike Trout','MTrou00','OF','MLB','LAA',16083333),('Nolan Arenado','NAren00','3B','MLB','COL',5000000),('Nelson Cruz','NCruz00','OF','MLB','SEA',14250000),('Reggie Nelson','NelsRe99','S','NFL','CIN',4775000),('Cam Newton','NewtCa00','QB','NFL','CAR',13000000),('Josh Norman','NormJo01','DB','NFL','CAR',1591750),('Noah Syndergaard','NSynd00','SP','MLB','NYM',535375),('Victor Oladipo','oladivi01','SG','NBA','ORL',5192520),('Greg Olsen','OlseGr00','TE','NFL','CAR',6300000),('Carson Palmer','PalmCa00','QB','NFL','ARI',7375000),('Chris Paul','paulch01','PG','NBA','LAC',21468695),('Julius Peppers','PeppJu99','OLB','NFL','GNB',12000000),('Adrian Peterson','PeteAd01','RB','NFL','MIN',15650000),('Marcus Peters','PeteMa00','DB','NFL','KAN',1742574),('Patrick Peterson','PetePa00','DB','NFL','ARI',14791491),('Paul Goldschmidt','PGold00','1B','MLB','ARI',5833333),('Mason Plumlee','plumlma01','C','NBA','POR',1415520),('Otto Porter','porteot01','SF','NBA','WAS',4662960),('Robinson Cano','RCano00','2B','MLB','SEA',24000000),('Darrelle Revis','ReviDa99','DB','NFL','NYJ',16000000),('Philip Rivers','RivePh00','QB','NFL','SDG',21166668),('Allen Robinson','RobiAl02','WR','NFL','JAX',797925),('Aaron Rodgers','RodgAa00','QB','NFL','GNB',18250000),('Ben Roethlisberger','RoetBe00','QB','NFL','PIT',17245000),('Rick Porcello','RPorc00','SP','MLB','BOS',20125000),('Ricky Rubio','rubiori01','PG','NBA','MIN',12700000),('Matt Ryan','RyanMa00','QB','NFL','ATL',19500000),('Richard Sherman','SherRi00','DB','NFL','SEA',12200000),('Kawann Short','ShorKa00','DT','NFL','CAR',1262819),('Josh Sitton','SittJo20','G','NFL','GNB',7000000),('Starling Marte','SMart00','OF','MLB','PIT',3333333),('Alex Smith','SmitAl03','QB','NFL','KAN',15600000),('Tyron Smith','SmitTy00','T','NFL','DAL',5039000),('Matthew Stafford','StafMa00','QB','NFL','DET',17721250),('Zach Strief','StriZa20','T','NFL','NOR',3200000),('Aqib Talib','TaliAq99','DB','NFL','DEN',6968750),('Ryan Tannehill','TannRy00','QB','NFL','MIA',4873364),('Tyrod Taylor','TaylTy00','QB','NFL','BUF',883333),('Isaiah Thomas','thomais02','PG','NBA','BOS',6912869),('Earl Thomas','ThomEa99','S','NFL','SEA',7400000),('Joe Thomas','ThomJo28','T','NFL','CLE',10200000),('Karl-Anthony Towns','townska01','PF','NBA','MIN',5703600),('Tanner Roark','TRoar00','SP','MLB','WSH',543000),('Trai Turner','TurnTr01','G','NFL','CAR',657950),('Jared Veldheer','VeldJa20','T','NFL','ARI',8500000),('Bobby Wagner','WagnBo00','MLB','NFL','SEA',2970663),('Kemba Walker','walkeke02','PG','NBA','CHO',12000000),('John Wall','walljo01','PG','NBA','WAS',15851950),('J.J. Watt','WattJ.00','DE','NFL','HOU',13969000),('Russell Westbrook','westbru01','PG','NBA','OKC',16744218),('Andrew Whitworth','WhitAn20','T','NFL','CIN',7200000),('Hassan Whiteside','whiteha01','C','NBA','MIA',981348),('Muhammad Wilkerson','WilkMu00','DE','NFL','NYJ',6969000),('Marvin Williams','willima02','PF','NBA','CHO',7000000),('Trent Williams','WillTr21','T','NFL','WAS',10664763),('Russell Wilson','WilsRu00','QB','NFL','SEA',7054868),('Jameis Winston','WinsJa00','QB','NFL','TAM',4609323),('Charles Woodson','WoodCh00','DB','NFL','OAK',4200000),('K.J. Wright','WrigK.00','OLB','NFL','SEA',4750000),('Marshal Yanda','YandMa20','G','NFL','BAL',6981765);
 /*!40000 ALTER TABLE `players` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'finalproject'
+--
+/*!50003 DROP PROCEDURE IF EXISTS `add_baseball_hitter` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `add_baseball_hitter`(
+	IN pId varchar(20), atBats int(3), runsScored int(3), hits int(3),
+    doubles int(2), triples int(2), homeruns int(2), runsBattedIn int(3),
+    stolenBases int(3), caughtStealing int(3), walksDrawn int(3), strikeouts int(3),
+    battingAverage DECIMAL(4,3), onBasePercentage DECIMAL(4,3), sluggingPercentage DECIMAL(4,3),
+    onBasePlusSlugging DECIMAL(4,3), winsAboveReplacement DECIMAL(4,2)
+)
+BEGIN
+DECLARE checkPlayerTable varchar(50);
+
+	SET checkPlayerTable := IFNULL((SELECT p.playerId FROM players p WHERE pId = p.playerId),'0');
+	IF checkPlayerTable <> '0' THEN INSERT INTO baseballhitterstats VALUES (pId,atBats,runsScored,hits,doubles,triples,homeruns,
+		runsBattedIn, stolenBases,caughtStealing,walksDrawn,strikeouts,battingAverage,onBasePercentage,
+        sluggingPercentage, onBasePlusSlugging,winsAboveReplacement);
+	ELSE
+		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'This player does not exist in the players table.';
+	END IF;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `add_baseball_pitcher` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `add_baseball_pitcher`(
+	IN pId varchar(20), gamesPitched int(2), gamesStarted int(2), inningsPitched DECIMAL(4,1), hitsAllowed int(3),
+    runsGivenUp int(3), earnedRuns int(3), walksAllowed int(3), strikeouts int(3), wins int(2), losses int(2),
+    saves int(2), blownSaves int(2), walksPlusHitsAllowedPerInningsPitched DECIMAL(3,2), earnedRunAverage DECIMAL(3,2),
+    winsAboveReplacement DECIMAL(4,2)
+)
+BEGIN
+DECLARE checkPlayerTable varchar(50);
+
+	SET checkPlayerTable := IFNULL((SELECT p.playerId FROM players p WHERE pId = p.playerId),'0');
+	IF checkPlayerTable <> '0' THEN INSERT INTO baseballpitcherstats VALUES (pId,gamesPitched,gamesStarted,inningsPitched,hitsAllowed,runsGivenUp,earnedRuns,
+			walksAllowed,strikeouts,wins,losses,saves,blownSaves,walksPlusHitsAllowedperInningsPitched,earnedRunAverage,winsAboveReplacement);
+	ELSE
+		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'This player does not exist in the players table.';
+	END IF;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `add_basketball_player` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `add_basketball_player`(
+	IN  pId varchar(20), gamesPlayed int(2), playerEfficiencyRating DECIMAL(3,1), ppg DECIMAL(3,1),
+    rpg DECIMAL(3,1), apg DECIMAL(3,1), spg DECIMAL(3,1), bpg DECIMAL(3,1),
+    fieldGoalPercentage DECIMAL (4,3), trueShootingPercentage DECIMAL(4,3), usagePercentage DECIMAL(3,1), valueOverReplacementPlayer DECIMAL(2,1)
+)
+BEGIN
+DECLARE checkPlayerTable varchar(50);
+
+	SET checkPlayerTable := IFNULL((SELECT p.playerId FROM players p WHERE pId = p.playerId),'0');
+	IF checkPlayerTable <> '0' THEN INSERT INTO basketballplayerstats VALUES (pId,gamesPlayed,playerEfficiencyRating,ppg,rpg,apg,spg,bpg,
+		fieldGoalPercentage,trueShootingPercentage,usagePercentage,valueOverReplacementPlayer);
+	ELSE
+		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'This player does not exist in the players table.';
+	END IF;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `add_football_defensive_player` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `add_football_defensive_player`(
+	IN 	pId varchar(20), approximateValue int(2), totalTackles int(3), assistedTackles int(3), sacks int(2),
+    passesDefended int(2), interceptions int(2), forcedFumbles int(2), fumblesRecovered int(2), defensiveTD int(1)
+)
+BEGIN
+DECLARE checkPlayerTable varchar(50);
+
+	SET checkPlayerTable := IFNULL((SELECT p.playerId FROM players p WHERE pId = p.playerId),'0');
+	IF checkPlayerTable <> '0' THEN INSERT INTO footballdefensiveplayerstats VALUES (pId,approximateValue,totalTackles,assistedTackles,sacks,
+		passesDefended,interceptions,forcedFumbles,fumblesRecovered,defensiveTD);
+	ELSE
+		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'This player does not exist in the players table.';
+	END IF;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `add_football_offensive_lineman` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `add_football_offensive_lineman`(
+	IN 	pId varchar(20), approximateValue int(2), sacksAllowed int(2), qbHits int(2), qbHurries int(2),
+    penaltiesCommitted int(2), penaltiesAccepted int(2)
+)
+BEGIN
+DECLARE checkPlayerTable varchar(50);
+
+	SET checkPlayerTable := IFNULL((SELECT p.playerId FROM players p WHERE pId = p.playerId),'0');
+	IF checkPlayerTable <> '0' THEN INSERT INTO footballoffensivelinestats VALUES (pId,approximateValue,sacksAllowed,qbHits,qbHurries,
+		penaltiesCommitted,penaltiesAccepted);
+	ELSE
+		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'This player does not exist in the players table.';
+	END IF;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `add_football_skill_position_player` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `add_football_skill_position_player`(
+	IN pId varchar(20), approximateValue int(2), passingYards int(4), passingTD int(2), yardsPerCompletion DECIMAL(3,1), yardsPerAttempt DECIMAL(3,1),
+    completionPercentage DECIMAL(3,1), rushingAttempts int(3), rushingYards int(4), rushingTD int(2), targets int(3), receptions int(3), receivingYards int(4),
+    receivingTD int(2), fumbles int(2), interceptions int(2)
+)
+BEGIN
+DECLARE checkPlayerTable varchar(50);
+
+	SET checkPlayerTable := IFNULL((SELECT p.playerId FROM players p WHERE pId = p.playerId),'0');
+	IF checkPlayerTable <> '0' THEN INSERT INTO footballoffensiveplayerstats VALUES (pId,approximateValue,passingYards,passingTD,yardsPerCompletion,yardsPerAttempt,
+		completionPercentage,rushingAttempts,rushingYards,rushingTD,targets,receptions,receivingYards,receivingTD,fumbles,interceptions);
+	ELSE
+		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'This player does not exist in the players table.';
+	END IF;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `add_to_players_table` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `add_to_players_table`(
+	IN pName varchar(30), pID varchar(20), pos char(3), sportName char(3), teamName char(3), salary int(10)
+)
+BEGIN 
+	INSERT INTO players VALUES (pName,pID,pos,sportName,teamName,salary);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `delete_player` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_player`(
+	IN pId varchar(20)
+)
+BEGIN
+	DELETE FROM players  WHERE pId = players.playerId;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `get_baseball_hitter` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_baseball_hitter`(
+	IN pName varchar(30), sportName char(3)
+)
+BEGIN
+	SELECT p.playerName, p.pos, bh.* -- bh = baseball hitter
+	FROM players p JOIN baseballhitterstats bh ON p.playerId = bh.playerId
+    WHERE pName = p.playerName AND sportName = p.sport
+	ORDER BY p.playerName; 
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `get_baseball_pitcher` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_baseball_pitcher`(
+	IN pName varchar(30), sportName char(3)
+)
+BEGIN
+	SELECT p.playerName, p.pos, bp.* -- bp = baseball pitcher
+	FROM players p JOIN baseballpitcherstats bp ON p.playerId = bp.playerId
+    WHERE pName = p.playerName AND sportName = p.sport
+	ORDER BY p.playerName; 
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `get_basketball_player` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_basketball_player`(
+	IN pName varchar(30), sportName char(3)
+)
+BEGIN
+	SELECT p.playerName, p.pos, bball.* -- bball = basketball
+	FROM players p JOIN basketballplayerstats bball ON p.playerId = bball.playerId
+    WHERE pName = p.playerName AND sportName = p.sport
+	ORDER BY p.playerName; 
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `get_football_defensive_player` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_football_defensive_player`(
+	IN pName varchar(30), sportName char(3)
+)
+BEGIN
+	SELECT p.playerName, p.pos, fd.* -- fd = football defensive player
+	FROM players p JOIN footballdefensiveplayerstats fd ON p.playerId = fd.playerId
+    WHERE pName = p.playerName AND sportName = p.sport
+	ORDER BY p.playerName; 
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `get_football_offensive_lineman` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_football_offensive_lineman`(
+	IN pName varchar(30), sportName char(3)
+)
+BEGIN
+	SELECT p.playerName, p.pos, fol.* -- fs = football skill position player
+	FROM players p JOIN footballoffensivelinestats fol ON p.playerId = fol.playerId
+    WHERE pName = p.playerName AND sportName = p.sport
+	ORDER BY p.playerName; 
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `get_football_skill_position_player` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_football_skill_position_player`(
+	IN pName varchar(30), sportName char(3)
+)
+BEGIN
+	SELECT p.playerName, p.pos, fs.* -- fs = football skill position player
+	FROM players p JOIN footballoffensiveplayerstats fs ON p.playerId = fs.playerId
+    WHERE pName = p.playerName AND sportName = p.sport
+	ORDER BY p.playerName; 
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `update_players_salary` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_players_salary`(
+	IN pId varchar(20), newSalary char(3)
+)
+BEGIN
+	UPDATE players SET players.salary = newSalary WHERE pId = players.playerId;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `update_players_team` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_players_team`(
+	IN pId varchar(20), newTeam char(3)
+)
+BEGIN
+	UPDATE players SET players.team = newTeam WHERE pId = players.playerId;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -268,4 +684,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-03 14:30:34
+-- Dump completed on 2016-12-03 20:29:04
