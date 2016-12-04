@@ -71,9 +71,9 @@ CREATE TABLE footballOffensiveLineStats
 	penaltiesAccepted int(2),
 	CONSTRAINT offensive_lineman_id
 		FOREIGN KEY (playerId)
-        REFERENCES players(playerId)
+		REFERENCES players(playerId)
 		ON DELETE CASCADE
-        ON UPDATE CASCADE
+		ON UPDATE CASCADE
 );
 
 CREATE TABLE basketballPlayerStats
